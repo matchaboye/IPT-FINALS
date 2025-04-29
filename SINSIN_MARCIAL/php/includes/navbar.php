@@ -24,7 +24,7 @@
                         <a class="nav-link" href="news.php" style="padding: 12px; color: white;"><b>PORTAL</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="news.php" style="padding: 12px; color: white;"><b>HOW 2 LEARN</b></a>
+                        <a class="nav-link" href="https://youtube.com/playlist?list=PLIC56TbvUEgLb29uCrB-MPRtm5iN0jfiN&si=LpkKOFEUkI91lPVt" style="padding: 12px; color: white;"><b>HOW-TO: DANCE</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="news.php" style="padding: 12px; color: white;"><b>EVENTS</b></a>
