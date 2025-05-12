@@ -1,0 +1,67 @@
+<?php
+    session_start();
+    require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/Directories.php");
+    require_once(ROOT_DIR."/php/includes/header.php");
+?>
+
+<!-- sidebar -->
+<div class="sidebar">
+    <h4 class="text-center mb-4">Akso Hospital</h4>
+    <a href="index.php">Home</a>
+    <a href="appointment.php">Appointment Form</a>
+    <a href="login.php">Login</a>
+    <a href="logout.php">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="appointment-form">
+      <h2 class="text-center mb-4">Book an Appointment</h2>
+      <form action="appointment.php" method="POST">
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" id="phone" name="phone" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="date" class="form-label">Preferred Date</label>
+          <input type="date" class="form-control" id="date" name="date" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="department" class="form-label">Department</label>
+          <select class="form-select" id="department" name="department" required>
+            <option selected disabled value="">Choose...</option>
+            <option>General Medicine</option>
+            <option>Pediatrics</option>
+            <option>Dermatology</option>
+            <option>Cardiology</option>
+            <option>Dental</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="message" class="form-label">Additional Message</label>
+          <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+        </div>
+
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Book Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+<?php
+    require_once(ROOT_DIR."/php/includes/footer.php");
+?>

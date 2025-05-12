@@ -1,9 +1,11 @@
 <?php
     session_start();
     require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/Directories.php");
-    require_once(ROOT_DIR."php/includes/navbar.php");
     require_once(ROOT_DIR."/php/includes/header.php");
 ?>
+
+<?php  require_once(ROOT_DIR."php/includes/navbar.php"); ?>
+
 
 <!-- Page Header -->
 <div class="container-fluid text-white text-center py-4" id="headerrr">

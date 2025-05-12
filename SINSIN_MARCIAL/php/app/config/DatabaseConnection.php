@@ -1,22 +1,21 @@
 <?php
 
-/*
 class DatabaseConnection{
     private $host = "localhost";
-    private $database = "ecommerce_amarcial";
-    private $dbusername = "amarcial";
-    private $dbpassword = "Am4rc!al_2024";
+    private $database = "aksohospital";
+    private $dbusername = "users";
+    private $dbpassword = "";
     private $conn = null;
 
     public function connectDB(){
 
 
-       /* $host = "localhost";
-        $database = "ecommerce";
+       $host = "localhost";
+        $database = "aksohospital";
         $dbusername = "root";
-        $dbpassword = ""; */
+        $dbpassword = "";
        
-       /* $dsn = "mysql: host=$this->host;dbname=$this->database;";
+       $dsn = "mysql: host=$this->host;dbname=$this->database;";
         try {
             $this->conn = new PDO($dsn, $this->dbusername, $this->dbpassword);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -35,4 +34,4 @@ class DatabaseConnection{
 }
 
 
-?> */
+?>
