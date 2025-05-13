@@ -24,10 +24,7 @@
                         <a class="nav-link" href="appointment.php"><b>APPOINTMENT</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ijoo-joomla ko ito ok"><b>EVENTS</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.php"><b>LOGIN</b></a>
+                        <a class="nav-link" href="http://localhost:81/aksohospitalevents/"><b>EVENTS</b></a>
                     </li>
                 </ul>
             </div>
