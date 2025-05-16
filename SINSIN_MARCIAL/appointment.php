@@ -7,11 +7,14 @@
 <!-- sidebar -->
 <?php require_once(ROOT_DIR."/php/includes/sidebar.php");?>
 
+<!-- dis page guard helps to log in muna -->
+ <?php require_once(ROOT_DIR."/php/includes/page-guard.php");?>
+
   <!-- Main Content -->
   <div class="main-content">
     <div class="appointment-form">
       <h2 class="text-center mb-4">Book an Appointment</h2>
-      <form action="appointment.php" method="POST">
+      <form action="php/app/config/Appointment.php" method="POST">
         <div class="mb-3">
           <label for="fullName" class="form-label">Full Name</label>
           <input type="text" class="form-control" id="fullName" name="fullName" required>

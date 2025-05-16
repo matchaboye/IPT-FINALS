@@ -18,13 +18,13 @@
   
   .custom-nav-links li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
     transition: color 0.3s;
   }
   
   .custom-nav-links li a:hover {
-    color: white;
+    color: rgb(106, 188, 255);
   }
 
   .hero {

@@ -7,6 +7,7 @@
 <!-- sidebar -->
 <?php require_once(ROOT_DIR."/php/includes/sidebar.php");?>
 
+
 <div class="container">
       <div class="login-card">
         <h4 class="text-center mb-4">Login</h4>
@@ -22,9 +23,10 @@
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Login</button>
           </div>
-          <div class="mt-3 text-center">
-            <small><a href="#">Forgot password?</a></small>
-          </div>
         </form>
       </div>
     </div>
+
+    <?php
+    require_once(ROOT_DIR."/php/includes/footer.php");
+?>

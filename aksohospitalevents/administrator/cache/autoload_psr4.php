@@ -1,6 +1,7 @@
 <?php
 defined('_JEXEC') or die;
 return [
+	'JoomShaper\\Plugin\\Finder\\Spsimpleportfolio\\' => [JPATH_PLUGINS . '\finder/spsimpleportfolio/src'],
 	'Joomla\\Component\\Actionlogs\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_actionlogs/src'],
 	'Joomla\\Component\\Admin\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_admin/src'],
 	'Joomla\\Component\\Associations\\Administrator\\' => [JPATH_ADMINISTRATOR . '/components/com_associations/src'],

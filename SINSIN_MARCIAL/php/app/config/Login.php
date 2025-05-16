@@ -1,11 +1,10 @@
 <?php
-
 session_start();
 
-$username = $_POST["username"];
-$password = $_POST["password"];
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
     $host = "localhost";
     $database = "aksohospital";
     $dbusername = "root";
@@ -17,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
-        // Check in users table
+        // Check users table
         $stmtUser = $conn->prepare('SELECT * FROM users WHERE username = :username');
         $stmtUser->bindParam(':username', $username);
         $stmtUser->execute();
@@ -25,21 +24,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($user && $password === $user['password']) {
             session_regenerate_id(true);
-            $_SESSION["user_type"] = "user";
-            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_id"] = $user["user_id"];  // your users table PK name?
             $_SESSION["username"] = $user["username"];
             $_SESSION["fullname"] = $user["fullname"];
-            $_SESSION["is_admin"] = $user["is_admin"];
-            
-            exit;
-        } if ($user["is_admin"] == 1) {
+            $_SESSION["role"] = ($user["is_admin"] == 1) ? 'admin' : 'user';
+
+            // Redirect based on role
+            if ($_SESSION["role"] === 'admin') {
                 header("Location: /admin/admin_dashboard.php");
             } else {
                 header("Location: /users/user_portal.php");
             }
+            exit;
+        }
 
-
-        // Check in doctors table if not found in users
+        // Check doctors table
         $stmtDoctor = $conn->prepare('SELECT * FROM doctors WHERE username = :username');
         $stmtDoctor->bindParam(':username', $username);
         $stmtDoctor->execute();
@@ -47,16 +46,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($doctor && $password === $doctor['password']) {
             session_regenerate_id(true);
-            $_SESSION["user_type"] = "doctor";
-            $_SESSION["doctor_id"] = $doctor["id"];
+            $_SESSION["doctor_id"] = $doctor["doctor_id"];  // your doctors table PK name?
             $_SESSION["username"] = $doctor["username"];
             $_SESSION["fullname"] = $doctor["fullname"];
+            $_SESSION["role"] = 'doctor';
+
             header("Location: /doctors/doctor_dashboard.php");
             exit;
         }
 
-        
-        // If neither matched
+        // If no match found
         $_SESSION["error"] = "Invalid username or password";
         header("Location: /login.php");
         exit;
@@ -64,6 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
+} else {
+    // Redirect if accessed without POST
+    header("Location: /login.php");
+    exit;
 }
-
-?>

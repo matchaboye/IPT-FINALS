@@ -10,7 +10,7 @@
     body {
       line-height: 1.6;
       overflow-x: hidden;
-      background-image: url('img/Akso_Hospital.png'); /* Use your actual image path */
+      background-image: url('img/Akso_Hospital.png'); 
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -32,10 +32,14 @@
 <body>
 
 <!-- Page Header -->
-<div class="container-fluid text-center py-4" id="headerrr" style="color: white;">
-    <h1 class="display-2" style="color: white; font-weight: bold;">AKSO HOSPITAL</h1>
-    <p class="lead" style="color: white;">Welcome to Linkon City's world-renowned medical institution.</p>
+<div class="container-fluid text-center py-4" id="headerrr" style="background-color: white;">
+    <br>
+    <h1 class="display-2" style="color: #326faf; font-weight: bold;">AKSO HOSPITAL</h1>
+    <p class="lead" style="color: #326faf;">Welcome to Linkon City's world-renowned medical institution.</p>
+    <br>
 </div>
+
+
 
 <div class="container py-5">
         <div class="text-center mb-5">
@@ -43,7 +47,7 @@
             <p class="lead" style="color: white;">Discover the excellence of Akso Hospital.</p>
         </div>
         
-        <div class="row g-4">
+        <div class="row g-4" style="align-items: center">
             <!-- Feature 1 -->
             <div class="col-md-6 col-lg-4">
                 <div class="feature-card card shadow-sm p-4 text-center">
