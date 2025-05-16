@@ -1,7 +1,7 @@
 <?php
     session_start();
     require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/Directories.php");
-        require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/DatabaseConnect.php");
+    require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/DatabaseConnect.php");
     require_once(ROOT_DIR."/php/includes/header.php");
 ?>
 
@@ -23,6 +23,29 @@ while ($row = $result->fetch_assoc()) {
 }
 $stmt->close();
 ?>
+
+<style>
+    body {
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-image: url('img/Akso_Hospital.png'); 
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    body::before {
+        content: "";
+        position: fixed; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: -1; 
+    }
+</style>
 
 <!-- da html -->
 <div class="container-fluid mt-4">

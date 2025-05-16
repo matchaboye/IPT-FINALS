@@ -26,7 +26,3 @@
         </form>
       </div>
     </div>
-
-    <?php
-    require_once(ROOT_DIR."/php/includes/footer.php");
-?>
