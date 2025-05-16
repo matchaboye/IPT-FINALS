@@ -63,8 +63,8 @@ if ($result = $conn->query($sql)) {
                                         <td><?= htmlspecialchars($doctor['username']) ?></td>
                                         <td><?= htmlspecialchars($doctor['department']) ?></td>
                                         <td>
-                                            <a href="edit_doc.php?id=<?= $doctor['doctor_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                                            <a href="delete_doc.php?id=<?= $doctor['doctor_id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this doctor?');">Delete</a>
+                                            <a href="admin/edit_doc.php?id=<?= $doctor['doctor_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+                                            <a href="admin/delete_doc.php?id=<?= $doctor['doctor_id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this doctor?');">Delete</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>
