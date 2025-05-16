@@ -1,27 +1,34 @@
 <?php
-    session_start();
-    require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/Directories.php");
-    require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/DatabaseConnect.php");
-    require_once(ROOT_DIR."/php/includes/header.php");
-?>
+session_start();
 
-<?php
-$stmt = $conn->prepare("SELECT fullname, username, department FROM doctors WHERE doctor_id = ?");
-$stmt->bind_param("i", $doctor_id);
-$stmt->execute();
-$stmt->bind_result($fullname, $username, $department);
-$stmt->fetch();
-$stmt->close();
-
-$appointments = [];
-$stmt = $conn->prepare("SELECT fullname, email, contactno, appointment_date, message, created_at, status FROM appointments WHERE department = ? ORDER BY appointment_date, created_at");
-$stmt->bind_param("s", $department);
-$stmt->execute();
-$result = $stmt->get_result();
-while ($row = $result->fetch_assoc()) {
-    $appointments[] = $row;
+if (!isset($_SESSION['doctor_id'])) {
+    header("Location: /login.php");
+    exit;
 }
-$stmt->close();
+
+require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/DatabaseConnect.php");  // Should create $conn as PDO
+
+$doctor_id = $_SESSION['doctor_id'];
+
+// Fetch doctor info
+$stmt = $conn->prepare("SELECT fullname, username, department FROM doctor WHERE doctor_id = ?");
+$stmt->execute([$doctor_id]);
+$doctor = $stmt->fetch();
+
+if (!$doctor) {
+    // Doctor not found, force logout
+    session_destroy();
+    header("Location: /login.php");
+    exit;
+}
+
+$department = $doctor['department'];
+
+// Fetch appointments for doctor's department
+$stmt = $conn->prepare("SELECT fullname, email, contactno, appointment_date, message, created_at, status FROM appointments WHERE department = ? ORDER BY appointment_date, created_at");
+$stmt->execute([$department]);
+$appointments = $stmt->fetchAll();
+
 ?>
 
 <style>
@@ -47,7 +54,6 @@ $stmt->close();
     }
 </style>
 
-<!-- da html -->
 <div class="container-fluid mt-4">
     <div class="row">
         <!-- Doctor Profile (beside sidebar) -->
@@ -57,9 +63,9 @@ $stmt->close();
                     <h5>Doctor Profile</h5>
                 </div>
                 <div class="card-body">
-                    <p><strong>Name:</strong> <?= htmlspecialchars($fullname) ?></p>
-                    <p><strong>Username:</strong> <?= htmlspecialchars($username) ?></p>
-                    <p><strong>Department:</strong> <?= htmlspecialchars($department) ?></p>
+                    <p><strong>Name:</strong> <?= htmlspecialchars($doctor['fullname']) ?></p>
+                    <p><strong>Username:</strong> <?= htmlspecialchars($doctor['username']) ?></p>
+                    <p><strong>Department:</strong> <?= htmlspecialchars($doctor['department']) ?></p>
                 </div>
             </div>
         </div>
@@ -105,7 +111,6 @@ $stmt->close();
     </div>
 </div>
 
-
 <?php
-    require_once(ROOT_DIR."/php/includes/footer.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/php/includes/footer.php");
 ?>

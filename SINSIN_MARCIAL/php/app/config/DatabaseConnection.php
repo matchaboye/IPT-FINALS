@@ -3,7 +3,7 @@
 class DatabaseConnection{
     private $host = "localhost";
     private $database = "aksohospital";
-    private $dbusername = "users";
+    private $dbusername = "root";
     private $dbpassword = "";
     private $conn = null;
 

@@ -12,7 +12,7 @@
     }
     .register-left {
         flex: 1;
-        background: url('/path/to/your/background.jpg') no-repeat center center;
+        background: url('/img/Akso_Hospital.png') no-repeat center center;
         background-size: cover;
         position: relative;
     }
@@ -41,7 +41,6 @@
 
 <div class="register-wrapper">
     <div class="register-left">
-        <!-- You can leave this empty or add your logo etc. -->
     </div>
 
     <div class="register-right">
@@ -56,7 +55,7 @@
                 </div>
             <?php endif; ?>
 
-            <form action="" method="post">
+            <form action="/php/app/config/Register.php" method="POST">
                 <div class="mb-3">
                     <label for="fullname" class="form-label">Full Name</label>
                     <input type="text" name="fullname" id="fullname" class="form-control" required>

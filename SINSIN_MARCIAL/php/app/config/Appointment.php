@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once($_SERVER["DOCUMENT_ROOT"]."/php/app/config/Directories.php");
-require_once(ROOT_DIR."/php/includes/page-guard.php");  // ensure user is logged in
+include('../config/DatabaseConnection.php');
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get and sanitize POST data

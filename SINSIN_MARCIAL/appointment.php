@@ -35,9 +35,6 @@
       <?php require_once(ROOT_DIR."/php/includes/sidebar.php"); ?>
     </div>
 
-<!-- dis page guard helps to log in muna -->
-<?php // require_once(ROOT_DIR."/php/includes/page-guard.php");?>
-
    
     <div class="col-md-6 d-flex justify-content-center align-items-center bg-white">
       <div class="appointment-form" style="width: 100%; max-width: 500px;">

@@ -11,10 +11,10 @@
 <div class="container">
       <div class="login-card">
         <h4 class="text-center mb-4">Login</h4>
-        <form>
+        <form action="/php/app/config/Login.php" method="POST">
           <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter email">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Username">
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Password</label>
