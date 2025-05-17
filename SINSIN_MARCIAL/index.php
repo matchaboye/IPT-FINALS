@@ -176,7 +176,7 @@
     <h1 style="color: #6abcff; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.6);">VISIT US</h1>
     <br>
     <p style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">We're located in the heart of Shanghai, providing world-class healthcare with state-of-the-art facilities.</p>
-    <p style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Open 24/7. Walk-ins and appointments welcome.</p>
+    <p style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">Open 24/7. Walk-ins and appointments are welcome.</p>
   </div>
 </div>
 
