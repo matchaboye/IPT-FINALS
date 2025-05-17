@@ -32,7 +32,7 @@
                         <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'http://akso-hospital-news.test:81/') echo 'active'; ?>" href="http://akso-hospital-news.test:81/"><b>NEWS</b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'appointment.php') echo 'active'; ?>" href="appointment.php"><b>APPOINTMENT</b></a>
+                        <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'appointment.php') echo 'active'; ?>" href="appointment.php"><b>SERVICES</b></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?php if(basename($_SERVER['PHP_SELF']) == 'http://localhost:81/aksohospitalevents/') echo 'active'; ?>" href="http://localhost:81/aksohospitalevents/"><b>EVENTS</b></a>
